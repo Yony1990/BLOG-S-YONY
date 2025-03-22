@@ -383,9 +383,6 @@
         row-gap: 1rem;
     }
 
-    /* .news-section {
-        overflow: hidden;
-    } */
 
     .news-grid {
         grid-template-columns: repeat(2, 1fr);

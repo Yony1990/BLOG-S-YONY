@@ -64,9 +64,10 @@
 .submission-message {
     font-size: 6rem;
     text-transform: uppercase;
-    background: linear-gradient(to right, rgba(83, 95, 148, 0.772), rgba(215, 153, 105, 0.691));
-    /* -webkit-background-clip: text; */
-    -webkit-text-fill-color: transparent;
+    color: rgba(83, 95, 148, 0.772);
+    /* background: linear-gradient(to right, rgba(83, 95, 148, 0.772), rgba(215, 153, 105, 0.691));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
     text-align: center;
 }
 
@@ -85,9 +86,10 @@
     font-family: 'Comfortaa', sans-serif;
     font-size: clamp(2rem, 5cqi, 6rem);
     text-transform: uppercase;
-    background: linear-gradient(to right, rgba(83, 95, 148, 0.772), rgba(215, 153, 105, 0.691));
-    /* -webkit-background-clip: text; */
-    -webkit-text-fill-color: transparent;
+    color: rgba(83, 95, 148, 0.772);
+    /* background: linear-gradient(to right, rgba(83, 95, 148, 0.772), rgba(215, 153, 105, 0.691));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
 }
 
 .blogs-right-form form {

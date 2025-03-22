@@ -145,6 +145,11 @@
     display: flex;
     align-items: center;
     position: relative;
+    transition: .2s;
+}
+
+.nav-link:hover {
+    color: #4573ba;
 }
 
 .nav-link i {

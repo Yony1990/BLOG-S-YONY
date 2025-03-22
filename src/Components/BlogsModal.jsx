@@ -2,25 +2,32 @@ import React from 'react'
 import './blogsModal.css'
 
 
-const BlogsModal = ({ show, blog, onClose }) => {
+
+const BlogsModal = ({ show, onClose, conter }) => {
   if(!show) {
     return null
   }
+  
+
   return (
+    
     <div className='modal-overlay'>
-      <div className="modal-content">
-        <span className="close-button" onClick={onClose}>
-            <i className="bi bi-x"></i>
-        </span>
-        {
-          blog.image && <img className='blogs-modal-image' src={blog.image} alt={blog.title} />
-        }
+
+     
+          <div className="modal-content">
+            <span className="close-button" onClick={onClose}>
+                <i className="bi bi-x"></i>
+            </span>
+            <img className='blogs-modal-image' src={conter.image} alt={conter.title} />
+            
+            
+            <h3 className='blogs-modal-title'>{conter.title}</h3>
+            <p className="blog-post-content">
+                {conter.parrafo}
+            </p>
+          </div>
         
-        <h3 className='blogs-modal-title'>{blog.title}</h3>
-        <p className="blog-post-content">
-            {blog.content}
-        </p>
-      </div>
+      
     </div>
   )
 }

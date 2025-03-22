@@ -279,9 +279,10 @@
 }
 
 .blog-posts {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     gap: 1.2rem;
     padding: 1.2rem;
     overflow-y: scroll;
@@ -291,8 +292,16 @@
     display: none;
 }
 
-.blog-post {
+/* .blog-post {
     flex: 0 1 calc(50% - .6rem);
+    border-radius: 1rem;
+    position: relative;
+    
+} */
+
+.blog-post {
+    width: 47%;
+    height: 200px;
     border-radius: 1rem;
     position: relative;
     
@@ -322,6 +331,10 @@
     font-family: 'Bebas Neue', sans-serif;
     letter-spacing: .15rem;
 
+}
+
+.blog-post p {
+    display: none;
 }
 
 .post-buttons {

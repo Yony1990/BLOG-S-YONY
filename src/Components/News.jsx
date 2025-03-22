@@ -6,6 +6,7 @@ import axios from "axios"
 import NewsModal from './NewsModal'
 import Bookmarks from './Bookmarks'
 import BlogsModal from './BlogsModal'
+import data from '../assets/Data/data';
 
 import yo from "../assets/images/yo.webp"
 import noImg from "../assets/images/no-img.webp"
@@ -28,7 +29,7 @@ const categories = [
 
 
 
-const News = ({ onShowBlogs, blogs, onEditBlog, onDeleteBlog }) => {
+const News = () => {
   const [headLine, setHeadLine] = useState(null)
   const [news, setNews] = useState([])
   const [selectedCategory, setSelectedCategory] = useState('technology')
@@ -38,8 +39,9 @@ const News = ({ onShowBlogs, blogs, onEditBlog, onDeleteBlog }) => {
   const [selectedArticle, setSelectedArticle] = useState(null)
   const [bookmarks, setBookmarks] = useState([])
   const [showbookmarks, setShowBookmarks] = useState(false)
-  const [selectedPost, setSelectedPost] = useState(null)
+  // const [selectedPost, setSelectedPost] = useState(null)
   const [showBlogModal, setshowBlogModal] = useState(false)
+  const [conter, setconter] = useState(null)
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -98,14 +100,14 @@ const News = ({ onShowBlogs, blogs, onEditBlog, onDeleteBlog }) => {
     })
   }
   
-  const handleBlogClick = (blog) => {
-    setSelectedPost(blog)
+  const handleBlogClick = (data) => {
+    setconter(data)
     setshowBlogModal(true)
   }
 
   const closeBlogModal = () => {
     setshowBlogModal(false)
-    setSelectedPost(null)
+    // setSelectedPost(null)
   }
   return (
     <div className='news'>
@@ -129,7 +131,7 @@ const News = ({ onShowBlogs, blogs, onEditBlog, onDeleteBlog }) => {
 
       <div className="news-content">
         <div className="navbar">
-            <div className="user" onClick={onShowBlogs}>
+            <div className="user">
               <img src={yo} alt="img" />
               <p>Yony's Blog</p>
             </div>
@@ -147,7 +149,7 @@ const News = ({ onShowBlogs, blogs, onEditBlog, onDeleteBlog }) => {
                
                 <a href="#" className='nav-link' onClick={() => setShowBookmarks(true)}>
                   Bookmarks <i className="bi bi-bookmarks-fill"></i>
-                  {/* <i class="bi bi-bookmarks-fill"></i> */}
+                  
                 </a>
               </div>
             </div>
@@ -225,31 +227,21 @@ const News = ({ onShowBlogs, blogs, onEditBlog, onDeleteBlog }) => {
         <div className="my-blogs">
             <h3 className='my-blogs-heading'>My Blogs</h3>
             <div className="blog-posts">
+
               {
-                blogs.map((blog, index) => (
-                  <div key={index} className="blog-post" onClick={() => handleBlogClick(blog)}>
-                    <img src={blog.image || noImg} alt={blog.title} />
-                    <h4>{blog.title}</h4>
-                    
-                    <div className="post-buttons">
-                      <button className="edit-post" onClick={() => onEditBlog(blog)}>
-                        <i class="bi bi-pencil-square"></i>
-                      </button>
-                      <button className="delete-post" onClick={(e) => {
-                        e.stopPropagation();
-                        onDeleteBlog(blog)
-                      }}>
-                        <i className="bi bi-trash"></i>
-                      </button>
-                    </div>
+                data.map((data) => (
+                  <div key={data.id} className="blog-post" onClick={() => handleBlogClick(data)}>
+                      <img src={data.image} alt='img' />
+                      <h4>{data.title}</h4> 
                   </div>
                 ))
               }
-              
+
             </div>
+            
             {
-              selectedPost && showBlogModal && (
-                <BlogsModal show={showBlogModal} blog={selectedPost} onClose={closeBlogModal}/>
+              showBlogModal && (
+                <BlogsModal show={showBlogModal} conter={conter} onClose={closeBlogModal}/>
               )
             }
             

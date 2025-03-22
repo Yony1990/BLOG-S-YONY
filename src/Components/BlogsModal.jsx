@@ -1,6 +1,6 @@
 import React from 'react'
 import './blogsModal.css'
-import demo from "../assets/images/no-img.png"
+
 
 const BlogsModal = ({ show, blog, onClose }) => {
   if(!show) {

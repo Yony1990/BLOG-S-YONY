@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import yo from "../assets/images/yo.jpg"
-import noImg from "../assets/images/no-img.png"
+import yo from "../assets/images/yo.webp"
+import noImg from "../assets/images/no-img.webp"
 import './blogs.css'
 
 const Blogs = ({ onBack, onCrateBlog, editPost, isEditing }) => {

@@ -1,8 +1,8 @@
 import React from 'react'
 import './bookmarks.css'
 import './modal.css'
-import demo from "../assets/images/demo.jpg"
-import noImg from "../assets/images/no-img.png"
+
+import noImg from "../assets/images/no-img.webp"
 
 const Bookmarks = ({ show, bookmarks, onClose, onSelecArticle, onDeleteBookmarks }) => {
 

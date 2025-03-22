@@ -7,12 +7,9 @@ import NewsModal from './NewsModal'
 import Bookmarks from './Bookmarks'
 import BlogsModal from './BlogsModal'
 
-import yo from "../assets/images/yo.jpg"
-import noImg from "../assets/images/no-img.png"
-import blogImg1 from "../assets/images/blog1.jpg"
-import blogImg2 from "../assets/images/blog2.jpg"
-import blogImg3 from "../assets/images/blog3.jpg"
-import blogImg4 from "../assets/images/blog4.jpg"
+import yo from "../assets/images/yo.webp"
+import noImg from "../assets/images/no-img.webp"
+
 
 
 
